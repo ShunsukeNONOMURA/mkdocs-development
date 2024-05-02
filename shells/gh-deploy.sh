@@ -1,1 +1,1 @@
-docker exec -i mkdocs /bin/ash -c "mkdocs gh-deploy"
+docker exec -i mkdocs-development /bin/ash -c "mkdocs gh-deploy"
