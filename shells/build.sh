@@ -1,0 +1,1 @@
+docker exec -i mkdocs-development /bin/ash -c "mkdocs build"

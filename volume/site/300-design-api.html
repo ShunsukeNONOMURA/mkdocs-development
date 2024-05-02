@@ -1,0 +1,1458 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://0.0.0.0/mkdocs/300-design-api.html">
+      
+      
+        <link rel="prev" href="220-requirement-robustness-analysis.html">
+      
+      
+        <link rel="next" href="300-design-test.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20">
+    
+    
+      
+        <title>（記述中）設計：API設計 - MkDocs Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="index.html" title="MkDocs Development" class="md-header__button md-logo" aria-label="MkDocs Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MkDocs Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              （記述中）設計：API設計
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="MkDocs Development" class="md-nav__button md-logo" aria-label="MkDocs Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MkDocs Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    はじめに
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="001-strategy-ux.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）戦略：UX設計戦略
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="002-strategy-agile-iconix.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    戦略：Agile ICONIX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="210-requirement-domain-model.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）要件定義：ドメインモデリング
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="211-requirement-usecase.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）要件定義：ユースケース
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="220-requirement-robustness-analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）分析：ロバストネス分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    （記述中）設計：API設計
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="300-design-api.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：API設計
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      REST API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="REST API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rest4" class="md-nav__link">
+    <span class="md-ellipsis">
+      RESTの4原則
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-status-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      html status code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uri-uniformed-resource-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      URI (Uniformed Resource Identifier)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="URI (Uniformed Resource Identifier)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#or" class="md-nav__link">
+    <span class="md-ellipsis">
+      考察：リソースは単数 or 複数どっち
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      パスの例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Action
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usersquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      /users/query としない
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      レスポンス構造
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      API設計
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API設計">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      API設計サンプル
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="300-design-test.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：テスト設計
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="300-design-ui.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：UI設計
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="350-design-ddd-cqrs.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：（DDD + CQRS）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="370-design-rdb%20copy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：RDB設計
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="370-design-rdb.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：RDB設計
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="371-design-rdb-sql-anti-pattern.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    設計：SQLアンチパターン
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="380-design-log.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：ログ設計
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="500-project-management.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）プロジェクトマネジメント
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="601-document-license.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）ライセンス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="800-security-cvss.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）セキュリティ：CVSS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      REST API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="REST API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rest4" class="md-nav__link">
+    <span class="md-ellipsis">
+      RESTの4原則
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-status-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      html status code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uri-uniformed-resource-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      URI (Uniformed Resource Identifier)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="URI (Uniformed Resource Identifier)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#or" class="md-nav__link">
+    <span class="md-ellipsis">
+      考察：リソースは単数 or 複数どっち
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      パスの例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Action
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usersquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      /users/query としない
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      レスポンス構造
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      API設計
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API設計">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      API設計サンプル
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="api">（記述中）設計：API設計<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
+<p>API設計に関してまとめる。<br />
+WebAPI設計に絶対解はないが、ベタープラクティスや周辺知識を抑えておくことに越したことはない。<br />
+整理しつつ設計例を示してみる。  </p>
+<h2 id="rest-api">REST API<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h2>
+<p>REpresentational State Transferの略。<br />
+標準化ではなくあくまで設計思想。  </p>
+<ul>
+<li>Representational →具象化された</li>
+<li>State →状態の</li>
+<li>Transfer →転送</li>
+</ul>
+<h3 id="rest4">RESTの4原則<a class="headerlink" href="#rest4" title="Permanent link">&para;</a></h3>
+<p>HTTPを設計した中心人物であるRoy Fielding氏が2000年に提唱した「RESTの4原則」というものがあり、これを満たすものを「RESTfulなシステム」と呼んだりする。  </p>
+<ul>
+<li>統一インターフェース（The Uniform Interface）<ul>
+<li>HTTPメソッドでJSON形式であるなど</li>
+</ul>
+</li>
+<li>アドレス可能性（Addressability）<ul>
+<li>URIでリソース情報を表現する</li>
+</ul>
+</li>
+<li>接続性（Links and Connectedness）<ul>
+<li>情報にはハイパーリンクを含めることができる</li>
+<li>情報Aが持つ情報Bの詳細についてリンクからたどれる</li>
+</ul>
+</li>
+<li>ステートレス性（Statelessness）<ul>
+<li>セッション管理しない (Cookie等)</li>
+</ul>
+</li>
+</ul>
+<h2 id="html-status-code">html status code<a class="headerlink" href="#html-status-code" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>コード系</th>
+<th>種類</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100系</td>
+<td>Informational</td>
+</tr>
+<tr>
+<td>200系</td>
+<td>Successful</td>
+</tr>
+<tr>
+<td>300系</td>
+<td>Redirection</td>
+</tr>
+<tr>
+<td>400系</td>
+<td>Client Error</td>
+</tr>
+<tr>
+<td>500系</td>
+<td>Server Error</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>HTTPステータスコード</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400 Bad Request</td>
+<td>一般的なクライアントエラー</td>
+</tr>
+<tr>
+<td>401 Unauthorized</td>
+<td>アクセス権が無い、または認証に失敗</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>閲覧権限が無い</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>見つからない</td>
+</tr>
+<tr>
+<td>500 Internal Server Error</td>
+<td>何らかのサーバ内で起きたエラー</td>
+</tr>
+</tbody>
+</table>
+<h2 id="uri-uniformed-resource-identifier">URI (Uniformed Resource Identifier)<a class="headerlink" href="#uri-uniformed-resource-identifier" title="Permanent link">&para;</a></h2>
+<p>Web上のファイルがどの位置にあるのかを表したもの。<br />
+近い概念にURL（Uniform Resource Locator）やURN（Uniform Resource Name）があるが、URIはこれらの総称に当たる。</p>
+<p><img alt="" src="resource/design-api/uri.dio.png" /></p>
+<p>URIの設計は覚えやすく、どんな機能を持つURIなのかがひと目でわかるルールに統一されていることが望ましい。  </p>
+<ul>
+<li>短くて入力しやすい<ul>
+<li>長い場合、不要な情報があったり、重複するものがあったりするかも</li>
+</ul>
+</li>
+<li>名詞を用いる。動詞は使わない。</li>
+<li>リソース名はケバブケース<ul>
+<li>URL中のパスパラメータ・リソース ID部分は キャメルケース</li>
+</ul>
+</li>
+<li>バージョン番号が含まれている<ul>
+<li>hostname/api/{version}/collection</li>
+<li>破壊的更新の場合に別パスにする用途 (v1.0.1, v1.1.0 -&gt; v1)</li>
+<li>マイナーバージョン以下は更新されても互換性を保つ仮定なので省略</li>
+</ul>
+</li>
+<li>サーバーアーキテクチャが反映されていない<ul>
+<li>cgi-bin などがパスに含まれる</li>
+<li>攻撃リスクにつながる</li>
+</ul>
+</li>
+<li>リソース名はSingleton か Collection かで単数形 / 複数形を使い分ける</li>
+<li>クエリやタスクについては後述するAPIアクションを参照</li>
+</ul>
+<h3 id="or">考察：リソースは単数 or 複数どっち<a class="headerlink" href="#or" title="Permanent link">&para;</a></h3>
+<ul>
+<li>賛否両論。複数派が情勢が強いかな。</li>
+<li>単数派<ul>
+<li>ORMやEntity名との命名整合や不規則変化系への対応がシンプルになる<ul>
+<li>media, medium</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>複数派<ul>
+<li>Rest に乗っ取ると複数形</li>
+</ul>
+</li>
+<li>今の所、基本的には複数形を用いて、必要に応じて単数形で示す派<ul>
+<li>Singleton か Collection なのかが明示的に示せる<ul>
+<li><a href="https://api.rubyonrails.org/classes/ActionDispatch/Routing/Mapper/Resources.html">参考：Ruby on Rails</a></li>
+</ul>
+</li>
+<li>プレゼンテーションで抽象的に取り扱うものだからORMやEntityと合わせなくても良い</li>
+<li>不規則変化系は英語が悪いのだが、自然言語は不完全なものであるので仕方なし</li>
+<li><a href="https://ja.wikipedia.org/wiki/KISS%E3%81%AE%E5%8E%9F%E5%89%87">KISSの原則だとどちらでも良い。一貫性が重要。</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="_1">パスの例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>URI</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/resource</td>
+<td>特定のリソース</td>
+</tr>
+<tr>
+<td>/resource/{id}</td>
+<td>特定のリソースの中の一つ</td>
+</tr>
+<tr>
+<td>/resource/{id}/resource</td>
+<td>特定のリソースの中の一つが持つリソース</td>
+</tr>
+</tbody>
+</table>
+<h2 id="api-action">API Action<a class="headerlink" href="#api-action" title="Permanent link">&para;</a></h2>
+<p>API Actionはおおむね次の８種類に分類。必要に応じて拡張する。</p>
+<table>
+<thead>
+<tr>
+<th>action-code</th>
+<th>action-name</th>
+<th>説明</th>
+<th>安全性</th>
+<th>冪等性</th>
+<th>HTTP Method</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Get</td>
+<td>単一のリソースを取得する操作。</td>
+<td>あり</td>
+<td>要</td>
+<td>GET</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>List</td>
+<td>全リソースを絞り込まずに一覧する操作。ページングは動作想定。</td>
+<td>あり</td>
+<td>要</td>
+<td>GET</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Create</td>
+<td>リソースを新規に作成する操作。</td>
+<td>なし</td>
+<td>要</td>
+<td>POST</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Patch</td>
+<td>既存リソースを部分的に変更する操作。</td>
+<td>なし</td>
+<td>不要</td>
+<td>PATCH</td>
+<td>ユーザの名前だけを更新するなど。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Upsert</td>
+<td>リソース置換、既存リソースがなければ作成する操作。</td>
+<td>なし</td>
+<td>要</td>
+<td>PUT</td>
+<td>名前を変えたユーザを更新するなど。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Delete</td>
+<td>リソースを削除する操作。</td>
+<td>なし</td>
+<td>要</td>
+<td>DELETE</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Task</td>
+<td>その他、上記に分類できない複雑な更新や計算などの操作。</td>
+<td>なし</td>
+<td>不要</td>
+<td>POST</td>
+<td>バッチ処理要求など</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Query</td>
+<td>特定の問い合わせ処理を要求する。検索結果などをレスポンスに含める。</td>
+<td>あり</td>
+<td>要</td>
+<td>POST</td>
+<td>CQRSのQuery部</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>安全性：リソースの状態を変化させない読み取り専用であること</li>
+<li>冪等性：ある操作を1回行っても複数回行っても結果(状態)が同じになる性質</li>
+</ul>
+<h3 id="usersquery">/users/query としない<a class="headerlink" href="#usersquery" title="Permanent link">&para;</a></h3>
+<ul>
+<li>users has a query に見える</li>
+<li>HTTP Method /(クエリ)/(リソース)</li>
+</ul>
+<h2 id="_2">レスポンス構造<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>headとdataに分ける。  </li>
+<li>headはデバッグ的情報で内容固定</li>
+<li>dataは副作用的情報でAPI毎に構造を変える<ul>
+<li>実はdataはdatumの複数形。data objectに有象無象を抱えているイメージで捉える。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JSON</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;head&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nt">&quot;actionCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ARRREEE&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="nt">&quot;actionName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ActionResouce&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="api_1">API設計<a class="headerlink" href="#api_1" title="Permanent link">&para;</a></h2>
+<p>これまでの情報を踏まえ、APIを設計していく。</p>
+<p>アクション名は左から　操作、リソース、（追加事項）のような構成。</p>
+<h3 id="api_2">API設計サンプル<a class="headerlink" href="#api_2" title="Permanent link">&para;</a></h3>
+<h4 id="_3">リソース<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>リソースコード</th>
+<th>リソース</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000</td>
+<td>Health</td>
+<td>システムのヘルス</td>
+</tr>
+<tr>
+<td>100</td>
+<td>User</td>
+<td>ユーザ</td>
+</tr>
+<tr>
+<td>200</td>
+<td>Chat</td>
+<td>チャット</td>
+</tr>
+<tr>
+<td>201</td>
+<td>ChatMessage</td>
+<td>チャットメッセージ</td>
+</tr>
+</tbody>
+</table>
+<h4 id="uri">URI<a class="headerlink" href="#uri" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>APIアクションコード（ARRR）</th>
+<th>APIアクション</th>
+<th>HTTP Method</th>
+<th>URI</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0000</td>
+<td>GetHealth</td>
+<td>GET</td>
+<td>/health</td>
+<td>ヘルス取得</td>
+</tr>
+<tr>
+<td>0100</td>
+<td>GetUser</td>
+<td>GET</td>
+<td>/users/{userId}</td>
+<td>ユーザ取得</td>
+</tr>
+<tr>
+<td>2100</td>
+<td>CreateUser</td>
+<td>POST</td>
+<td>/users</td>
+<td>ユーザ作成</td>
+</tr>
+<tr>
+<td>5100</td>
+<td>DeleteUser</td>
+<td>DELETE</td>
+<td>/users/{userId}</td>
+<td>ユーザ削除</td>
+</tr>
+<tr>
+<td>7100</td>
+<td>QueryUser</td>
+<td>POST</td>
+<td>/query/users</td>
+<td>ユーザ検索</td>
+</tr>
+<tr>
+<td>0200</td>
+<td>GetChat</td>
+<td>GET</td>
+<td>/chats/{chatId}</td>
+<td>チャット取得</td>
+</tr>
+<tr>
+<td>2200</td>
+<td>CreateChat</td>
+<td>POST</td>
+<td>/chats</td>
+<td>チャット作成</td>
+</tr>
+<tr>
+<td>5200</td>
+<td>DeleteChat</td>
+<td>DELETE</td>
+<td>/chats/{chatId}</td>
+<td>チャット削除</td>
+</tr>
+<tr>
+<td>7200</td>
+<td>QueryChat</td>
+<td>POST</td>
+<td>/query/chats</td>
+<td>チャット検索</td>
+</tr>
+<tr>
+<td>2201</td>
+<td>CreateChatMessage</td>
+<td>POST</td>
+<td>/chat-messages</td>
+<td>チャットメッセージ作成</td>
+</tr>
+<tr>
+<td>3201</td>
+<td>PatchChatMessage</td>
+<td>PATCH</td>
+<td>/chat-messages/{chatMessageId}</td>
+<td>チャットメッセージ更新</td>
+</tr>
+<tr>
+<td>5201</td>
+<td>DeleteChatMessage</td>
+<td>DELETE</td>
+<td>/chat-messages/{chatMessageId}</td>
+<td>チャットメッセージ削除</td>
+</tr>
+<tr>
+<td>7201</td>
+<td>QueryChatMessage</td>
+<td>POST</td>
+<td>/query/chat-messages</td>
+<td>チャットメッセージ検索</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">参考<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://learn.microsoft.com/ja-jp/azure/architecture/best-practices/api-design#define-api-operations-in-terms-of-http-methods">HTTP メソッドに関する API 操作の定義</a></li>
+<li><a href="https://qiita.com/mserizawa/items/b833e407d89abd21ee72">翻訳: WebAPI 設計のベストプラクティス</a></li>
+<li><a href="https://so-zou.jp/software/tech/network/tech/http/status-code/">HTTPステータス コード (HTTP status codes)</a></li>
+<li><a href="https://restfulapi.net/resource-naming/">REST API URI Naming Conventions and Best Practices</a></li>
+<li>API設計<ul>
+<li><a href="https://dev.classmethod.jp/articles/cmdevio2018-api/">Developers.IO 2018 で「API 設計」の話をしてきた #cmdevio2018</a></li>
+<li><a href="https://blog.pepese.com/design-rest-api/">REST API設計について整理してみた</a></li>
+<li><a href="https://qiita.com/KNR109/items/d3b6aa8803c62238d990">API設計まとめ</a></li>
+</ul>
+</li>
+<li>REST API リファレンス サンプル<ul>
+<li><a href="https://developer.spotify.com/documentation/web-api">Spotify</a></li>
+<li><a href="https://developer.twitter.com/en/docs/twitter-api/migrate/twitter-api-endpoint-map">Twitter</a></li>
+<li><a href="https://developers.google.com/youtube/v3/docs?hl=ja">youtube data api</a></li>
+</ul>
+</li>
+</ul>
+<!-- ---------------------------------------- -->
+<h1 id="_5">途中　＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<h2 id="_6">ドメインモデル設計サンプル<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>chatRoom</p>
+<p>Chat id　チャットルーム
+ChatName 主題</p>
+<p>Join ChatMessage チャットメッセージ
+Join ChatUsers　参加者</p>
+<p>ChatRoomParticipant 参加者
+ChatId チャット
+ChatUserId チャット参加ユーザId</p>
+<p>chat message id
+ChatMessage
+ChatMessageUserId
+ChatMessageCreatedAt</p>
+<p><strong>まだ</strong></p>
+<h2 id="process">Process<a class="headerlink" href="#process" title="Permanent link">&para;</a></h2>
+<p>ProcessCode = ARRR
+ProcessName = ResouceNameActionName</p>
+<h2 id="recouse">Recouse<a class="headerlink" href="#recouse" title="Permanent link">&para;</a></h2>
+<p>3桁のコードで示すこと</p>
+<h2 id="_7">設計のステップ<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li>データの洗い出し</li>
+<li>データをリソースに分割</li>
+<li>リソースにURIを割り当てる</li>
+<li>リソースにIFを割り当てる</li>
+<li>クライアントに送受信するメディアタイプを決める</li>
+<li>接続性を高める</li>
+<li>正常系を考える</li>
+<li>例外処理を考える</li>
+</ol>
+<!-- <-------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 shunsuke_nonomura
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/ShunsukeNONOMURA" target="_blank" rel="noopener" title="shunsuke_nonomura on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "navigation.top", "header.autohide", "search.suggest", "search.highlight", "content.tabs.link"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": 1.0}</script>
+    
+    
+      <script src="assets/javascripts/bundle.dd8806f2.min.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

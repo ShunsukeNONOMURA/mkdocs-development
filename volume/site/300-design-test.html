@@ -1,0 +1,1036 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://0.0.0.0/mkdocs/300-design-test.html">
+      
+      
+        <link rel="prev" href="300-design-api.html">
+      
+      
+        <link rel="next" href="300-design-ui.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20">
+    
+    
+      
+        <title>（記述中）設計：テスト設計 - MkDocs Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="index.html" title="MkDocs Development" class="md-header__button md-logo" aria-label="MkDocs Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MkDocs Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              （記述中）設計：テスト設計
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="MkDocs Development" class="md-nav__button md-logo" aria-label="MkDocs Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MkDocs Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    はじめに
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="001-strategy-ux.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）戦略：UX設計戦略
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="002-strategy-agile-iconix.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    戦略：Agile ICONIX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="210-requirement-domain-model.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）要件定義：ドメインモデリング
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="211-requirement-usecase.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）要件定義：ユースケース
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="220-requirement-robustness-analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）分析：ロバストネス分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="300-design-api.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：API設計
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    （記述中）設計：テスト設計
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="300-design-test.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：テスト設計
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-driven-development-tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test-Driven Development: TDD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior-driven-development-bdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Behavior Driven Development: BDD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Behavior Driven Development: BDD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gherkin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gherkin記述例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      静的解析テスト
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="静的解析テスト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eslint" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESLint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      結合テスト
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="結合テスト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vitest" class="md-nav__link">
+    <span class="md-ellipsis">
+      vitest
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      負荷テスト
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="300-design-ui.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：UI設計
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="350-design-ddd-cqrs.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：（DDD + CQRS）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="370-design-rdb%20copy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：RDB設計
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="370-design-rdb.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：RDB設計
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="371-design-rdb-sql-anti-pattern.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    設計：SQLアンチパターン
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="380-design-log.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計：ログ設計
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="500-project-management.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）プロジェクトマネジメント
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="601-document-license.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）ライセンス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="800-security-cvss.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）セキュリティ：CVSS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-driven-development-tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test-Driven Development: TDD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior-driven-development-bdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Behavior Driven Development: BDD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Behavior Driven Development: BDD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gherkin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gherkin記述例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      静的解析テスト
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="静的解析テスト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eslint" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESLint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      結合テスト
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="結合テスト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vitest" class="md-nav__link">
+    <span class="md-ellipsis">
+      vitest
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      負荷テスト
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">（記述中）設計：テスト設計<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>静的解析テスト</li>
+<li>単体テスト</li>
+<li>結合テスト</li>
+<li>e2eテスト</li>
+<li>負荷テスト</li>
+</ul>
+<p>コスト配分</p>
+<p>テストによる品質担保とスピードのトレードオフ</p>
+<ul>
+<li>継続的な更新を行うアプリケーションの場合に変更による不具合発生が検知できるので更新のスピードを出せるはず</li>
+<li>テスト実装で時間がかかるのはテスト粒度設計の問題と考える<ul>
+<li>静的解析は早めに入れておいて損はない<ul>
+<li>後から入れると修正対応で地獄</li>
+</ul>
+</li>
+<li>結合テストをメインに据えるとコスト対効果でバランスの良い<ul>
+<li><a href="https://kentcdodds.com/blog/write-tests">The Testing Trophy</a></li>
+<li>ユーザから見えるものにテストの比重を置く</li>
+<li>False Negative 実装の詳細をテストに書くべきではない</li>
+<li>False Positive 壊れるべきときに壊れない</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>テスト駆動開発(Test-Driven Development: TDD)</li>
+<li>ビヘイビア駆動開発 (Behavior Driven Development: BDD)</li>
+</ul>
+<h2 id="test-driven-development-tdd">Test-Driven Development: TDD<a class="headerlink" href="#test-driven-development-tdd" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="resource/design-test/tdd.dio.png" /></p>
+<ol>
+<li>テストの作成<ul>
+<li>コードを書く前に、ソフトウェアの各ユースケースとユーザーストーリーを考案する（ユースケース駆動に対するテストを考える）。</li>
+<li>その後、ユースケースとユーザーストーリーからテストを作成する。</li>
+<li>テストはできるだけ簡潔にする。</li>
+</ul>
+</li>
+<li>テストの実行
+    <!-- - テストが実行できるようにコンパイルされます。 --><ul>
+<li>この時点ではコードがまだ開発されていないため、最初のテストは失敗する。</li>
+</ul>
+</li>
+<li>テストケースに基づいてコード開発/更新<ul>
+<li>期待値通りコードが正しく動けばOK。</li>
+<li>ハードコードについては、ステップ⑤でリファクタリングされるので後段対応でも良い。</li>
+</ul>
+</li>
+<li>テストの再実行<ul>
+<li>テストが失敗した場合、コードを修正する。</li>
+<li>全てのテストに合格するまで、テストは再実行される。</li>
+</ul>
+</li>
+<li>コードのリファクタリング<ul>
+<li>テストが正常に実行されたら、全体的なパフォーマンスを向上させるために、コードの保守性と可読性を最適化する。</li>
+<li>リファクタリングがプログラムの外部動作に影響を与えないことを確認する。</li>
+</ul>
+</li>
+</ol>
+<p>新しい機能が追加された時にテストケースを追加するために、上記のステップ1〜5の上のサイクルを繰り返す。</p>
+<h2 id="behavior-driven-development-bdd">Behavior Driven Development: BDD<a class="headerlink" href="#behavior-driven-development-bdd" title="Permanent link">&para;</a></h2>
+<p>TDDではテストの作成にあたり、次の課題に開発者は直面する。</p>
+<ul>
+<li>どこから始めるか</li>
+<li>何をテストするのか</li>
+<li>何をテストしないのか</li>
+</ul>
+<p>BDDではステムの予想される動作を確認するためのテストに重点を置く。
+BDDでは開発者やドメインの専門家以外の人でも読める「Gherkin」などの自然言語でテストケースを作成することが一般的。</p>
+<h3 id="gherkin">Gherkin記述例<a class="headerlink" href="#gherkin" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">feature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">きゅうりを食べる</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># description</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">人がきゅうりを食べるときの振る舞い</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">scenario</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">数十本のきゅうりを食べるとお腹が満たさせる</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">given</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">太郎は空腹である</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">太郎はきゅうりを50本食べる</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">then</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">太郎は満腹になる</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><a href="https://zenn.dev/jyoppomu/articles/4bd0ddfc75545b">Gherkin記法はじめました</a></li>
+</ul>
+<p>ユースケースに対して素直にテストを記述できるのでユースケース駆動との相性が良さそう。
+性質上結合テストに軸を置くことになるので、The Testing Trophyの観点でもコスト対効果でバランスが良い。</p>
+<!-- #################################### -->
+
+<h2 id="_3">静的解析テスト<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="eslint">ESLint<a class="headerlink" href="#eslint" title="Permanent link">&para;</a></h3>
+<h2 id="_4">結合テスト<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="vitest">vitest<a class="headerlink" href="#vitest" title="Permanent link">&para;</a></h3>
+<h2 id="_5">負荷テスト<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">参考<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>アジャイルテスト<ul>
+<li><a href="https://shiftasia.com/ja/column/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8Btdd%E3%81%A8bdd/">アジャイル開発における「TDD」と「BDD」</a></li>
+<li><a href="https://www.tutorialspoint.com/behavior_driven_development/behavior_test_driven_development.htm">BDD - Test Driven Development</a></li>
+<li><a href="https://speakerdeck.com/yajihum/hurontoendoniokeru-tesutofang-zhen-testing-trophynogai-nian-tobdd?slide=13">フロントエンドにおける テスト方針〜Testing Trophyの概念とBDD〜</a></li>
+</ul>
+</li>
+<li>フロントエンド<ul>
+<li><a href="https://zenn.dev/koki_tech/articles/a96e58695540a7#%F0%9F%91%BD-%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88%E3%81%AE%E7%A8%AE%E9%A1%9E">フロントエンドのテスト戦略について考える</a></li>
+<li><a href="https://zenn.dev/kakkoyakakko/articles/a5ab80d0341a47">Nuxt(SPAモード)の自動テストを考える</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 shunsuke_nonomura
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/ShunsukeNONOMURA" target="_blank" rel="noopener" title="shunsuke_nonomura on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "navigation.top", "header.autohide", "search.suggest", "search.highlight", "content.tabs.link"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": 1.0}</script>
+    
+    
+      <script src="assets/javascripts/bundle.dd8806f2.min.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>
