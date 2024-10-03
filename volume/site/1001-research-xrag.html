@@ -8,11 +8,11 @@
       
       
       
-        <link rel="canonical" href="http://0.0.0.0/mkdocs/index.html">
+        <link rel="canonical" href="http://0.0.0.0/mkdocs/1001-research-xrag.html">
       
       
+        <link rel="prev" href="1000-research-hnsw.html">
       
-        <link rel="next" href="0001-strategy-ux.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>MkDocs Development</title>
+        <title>xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token - MkDocs Development</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#xrag-extreme-context-compression-for-retrieval-augmented-generation-with-one-token" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              はじめに
+              xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
             
           </span>
         </div>
@@ -202,30 +202,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    はじめに
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -234,37 +214,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      リンク
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -713,10 +662,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="1001-research-xrag.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="1001-research-xrag.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -725,6 +694,55 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      特徴
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      疑問等
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考/引用
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -758,9 +776,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      特徴
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      リンク
+      疑問等
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考/引用
     </span>
   </a>
   
@@ -781,11 +817,101 @@
                   
 
 
-<h1 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>開発に関しての知見を記述するページ</p>
-<h2 id="_2">リンク<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="xrag-extreme-context-compression-for-retrieval-augmented-generation-with-one-token">xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token<a class="headerlink" href="#xrag-extreme-context-compression-for-retrieval-augmented-generation-with-one-token" title="Permanent link">&para;</a></h1>
+<p>論文タイトル(和訳): xRAG:1つのトークンを持つ検索拡張ジェネレーションのための極端文脈圧縮</p>
+<p><strong>推論</strong>
+<img alt="" src="https://github.com/Hannibal046/xRAG/blob/main/assets/framework.jpg?raw=true" /></p>
+<p><strong>学習</strong>
+<img alt="" src="https://storage.googleapis.com/zenn-user-upload/d967a8caee73-20240525.png" /></p>
 <ul>
-<li><a href="https://github.com/ShunsukeNONOMURA/mkdocs-development">Github Repository</a></li>
+<li>RAGのための文脈圧縮（Context Compression）手法</li>
+<li>xRAGでは文書ベクトルをモダリティプロジェクタによって1トークンのベクトルに圧縮する<ul>
+<li>LLMへのトークン入力が「文書テキスト＋問い合わせテキスト」（b）から「文書ベクトル(１トークン)＋問い合わせテキスト」(a)になるためトークン消費量が大幅に削減される</li>
+<li>マルチモーダルAIにおけるバイナリベクトル投影に概念が似ている</li>
+<li>チューニング済みLLMインストラクションに対してモダリティプロジェクタの学習を行うイメージ(LLM側はファインチューニングしない)</li>
+</ul>
+</li>
+<li>設計/学習<ul>
+<li>2層のMLPで設計されたモダリティプロジェクタをフルスクラッチで学習</li>
+<li>通常のRAGとxRAGの回答に差がなくなるようにProjectorを学習</li>
+</ul>
+</li>
+<li>性能評価<ul>
+<li>論文中でのバックボーンLLMはMistral-7b、Mixtral-8x7b</li>
+<li>6つの知識集約タスクにおいて一貫して10%以上の性能向上</li>
+<li>総フロップスを3.53倍削減</li>
+<li>複数の知識を活用して回答する必要があるようなマルチホップなタスク（HotpotQA）では、従来のRAGには劣る</li>
+</ul>
+</li>
+<li>利用<ul>
+<li>xRAGのコードやバックボーンLLMについて学習済みのPretrained Projectorはgithubに公開されている</li>
+<li><a href="https://github.com/Hannibal046/xRAG">https://github.com/Hannibal046/xRAG</a></li>
+</ul>
+</li>
+<li>備考<ul>
+<li>将来的に文書データコネクタとしてマルチモーダルLLM側で対応してもらえないのだろうか</li>
+</ul>
+</li>
+</ul>
+<h2 id="_1">特徴<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>従来手法との主な違い<ul>
+<li>RAG：従来手法(b)<ul>
+<li>検索結果のテキストをそのまま文字列トークン（ベクトル）として渡す</li>
+</ul>
+</li>
+<li>xRAG：提案手法(a)<ul>
+<li>Datastoreの検索結果ベクトルを事前学習したprojectorを用いて圧縮してから渡す</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>手法のキモ<ul>
+<li>「ドキュメントのベクトルをLLM向けに別のベクトルに変換する」ためのProjector（変換器）</li>
+</ul>
+</li>
+<li>学習方法<ul>
+<li>次の2つの回答に差がなくなるようにProjectorを学習させる<ol>
+<li>普通のRAGの通り「関連テキスト+質問」をLLMに渡した場合のLLMの回答</li>
+<li>「関連テキストをProjectorで変換したベクトル+質問」をLLMに渡した場合のLLMの解凍</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>制限<ul>
+<li>？日本語対応</li>
+<li>？LLMモデルへのロバスト性</li>
+</ul>
+</li>
+</ul>
+<h2 id="_2">疑問等<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>複数のチャンクに対するベクトルはどのように1トークン化するのか</li>
+<li>質問文含めて1トークン化できないのか</li>
+<li>どうせ事前計算するならトークン列すべてを使って1トークン圧縮するようなことはしないのか？</li>
+</ul>
+<h2 id="_3">参考/引用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://zenn.dev/knowledgesense/articles/2b6aa64f27ea89">RAGで文書を1トークンに圧縮する「xRAG」について</a><ul>
+<li>概要解説記事</li>
+</ul>
+</li>
+<li><a href="https://arxiv.org/abs/2405.13792">xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token</a><ul>
+<li>もとの論文</li>
+</ul>
+</li>
+<li><a href="https://note.com/handsomemaskot/n/neffd05c7d080">xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token</a><ul>
+<li>chatgptに入れたやつ</li>
+</ul>
+</li>
+<li><a href="https://github.com/Hannibal046/xRAG">xRAG github</a><ul>
+<li>pretrainモデルやxRAGのソースコードが公開されている</li>
+</ul>
+</li>
+<li><a href="https://zenn.dev/elith/articles/d21b97f52a7ab8#%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A2%E3%83%BC%E3%83%80%E3%83%ABllm%E3%81%AE%E6%A7%8B%E7%AF%89%E6%96%B9%E6%B3%95">マルチモーダルLLMの構築方法</a><ul>
+<li>参考：コネクタの学習が似ている</li>
+</ul>
+</li>
 </ul>
 
 

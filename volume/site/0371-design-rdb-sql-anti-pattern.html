@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://0.0.0.0/mkdocs/index.html">
+        <link rel="canonical" href="http://0.0.0.0/mkdocs/0371-design-rdb-sql-anti-pattern.html">
       
       
+        <link rel="prev" href="0370-design-rdb.html">
       
-        <link rel="next" href="0001-strategy-ux.html">
+      
+        <link rel="next" href="0380-design-log.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>MkDocs Development</title>
+        <title>設計：SQLアンチパターン - MkDocs Development</title>
       
     
     
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#sql" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              はじめに
+              設計：SQLアンチパターン
             
           </span>
         </div>
@@ -202,30 +204,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    はじめに
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -234,37 +216,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      リンク
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -493,10 +444,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="0371-design-rdb-sql-anti-pattern.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    設計：SQLアンチパターン
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="0371-design-rdb-sql-anti-pattern.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -505,6 +476,109 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-jaywalking" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Jaywalking（信号無視）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Jaywalking（信号無視）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      解決策：交差テーブルを作成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-eav-entity-attribute-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. EAV (Entity Attribute Value)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. EAV (Entity Attribute Value)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      解決策：サブタイプでのモデリングを行う
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-multi-column-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Multi Column Attribute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Multi Column Attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      解決策：交差テーブルを作成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -758,9 +832,81 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1-jaywalking" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Jaywalking（信号無視）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Jaywalking（信号無視）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      解決策：交差テーブルを作成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-eav-entity-attribute-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. EAV (Entity Attribute Value)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. EAV (Entity Attribute Value)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      リンク
+      解決策：サブタイプでのモデリングを行う
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-multi-column-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Multi Column Attribute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Multi Column Attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      解決策：交差テーブルを作成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
     </span>
   </a>
   
@@ -781,11 +927,347 @@
                   
 
 
-<h1 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>開発に関しての知見を記述するページ</p>
-<h2 id="_2">リンク<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="sql">設計：SQLアンチパターン<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h1>
+<p>SQLに関するアンチパターンをまとめたもの。
+自分が関わったことのある設計について記載。</p>
+<h2 id="1-jaywalking">1. Jaywalking（信号無視）<a class="headerlink" href="#1-jaywalking" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>開発者はよく、「多対多」の関連を表現する交差テーブルの作成を避けるために、カンマ区切りのリストを使います。
+私はこのアンチパターンをJaywalkingと名づけました。どちらも、"intersection"を避けようとする行為だからです。</p>
+</blockquote>
+<p>カンマ区切りの値を入れること。半構造データみたいになる。</p>
+<table>
+<thead>
+<tr>
+<th>book_id</th>
+<th>book_name</th>
+<th>book_tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Spring MVC</td>
+<td>Java,Spring,SpringMVC</td>
+</tr>
+<tr>
+<td>2</td>
+<td>はじめてのScala</td>
+<td>Scala,入門</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">解決策：交差テーブルを作成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>book_id</th>
+<th>book_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Spring MVC</td>
+</tr>
+<tr>
+<td>2</td>
+<td>はじめてのScala</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>book_tag_id</th>
+<th>book_tag_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Java</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Spring</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SpringMVC</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Scala</td>
+</tr>
+<tr>
+<td>5</td>
+<td>入門</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>book_id</th>
+<th>book_tag_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-eav-entity-attribute-value">5. EAV (Entity Attribute Value)<a class="headerlink" href="#5-eav-entity-attribute-value" title="Permanent link">&para;</a></h2>
+<p>Entity Attribute Value（以下EAV）では次のような項目を持ったテーブルが設計される。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entity</td>
+<td>親テーブルに対応した外部キーを格納</td>
+</tr>
+<tr>
+<td>Attribute</td>
+<td>カラム名に相当する属性名を指定</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>属性の値</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>book_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>book_id</th>
+<th>attribute</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>name</td>
+<td>本名</td>
+</tr>
+<tr>
+<td>1</td>
+<td>release_date</td>
+<td>2020/9/24</td>
+</tr>
+<tr>
+<td>1</td>
+<td>price</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><a href="https://github.com/ShunsukeNONOMURA/mkdocs-development">Github Repository</a></li>
+<li>メリット<ul>
+<li>テーブルの列数を削減できる</li>
+<li>新規の属性を追加する際に列数を増加しなくて良い</li>
+<li>属性が存在しない列にNULLが入りNULLだらけのテーブルにならない</li>
+<li>データベースの構造は単純になる</li>
+</ul>
+</li>
+<li>デメリット<ul>
+<li>データの取得が冗長化する</li>
+<li>特定の属性にNOT NULL制約を設定できない</li>
+<li>データ型を使用できない</li>
+<li>外部制約キーを使用できない</li>
+<li>動的に属性名が増えるため整合性が担保しづらい</li>
+</ul>
+</li>
+</ul>
+<h3 id="_2">解決策：サブタイプでのモデリングを行う<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<!-- ![](https://camo.qiitausercontent.com/3b3c8cf3b4a65cca1fd47f5765fd6c6209e4b40b/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f3233363534322f62643133646131332d613063312d636234302d626365662d3434373662343830396333382e706e67) -->
+
+<p>大きく分けて4種類の継承方法がある。</p>
+<ul>
+<li>シングルテーブル継承</li>
+<li>具象テーブル継承</li>
+<li>クラステーブル継承</li>
+<li>半構造化データ</li>
+</ul>
+<h4 id="_3">シングルテーブル継承で作成する場合<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>book_id</th>
+<th>book_name</th>
+<th>book_release_date</th>
+<th>book_price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>本名</td>
+<td>2020/9/24</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-multi-column-attribute">7. Multi Column Attribute<a class="headerlink" href="#7-multi-column-attribute" title="Permanent link">&para;</a></h2>
+<p>複数列属性を持つようなアンチデザインパターン。Jaywalkingに似ている。</p>
+<ul>
+<li>属性の検索が複雑になる</li>
+<li>属性の追加・削除がしにくい</li>
+<li>属性の一意性を保証できない</li>
+<li>属性列の増加が起こりうる</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>book_id</th>
+<th>book_name</th>
+<th>book_tag_1</th>
+<th>book_tag_2</th>
+<th>book_tag_3</th>
+<th>book_tag_4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Spring MVC</td>
+<td>Java</td>
+<td>Spring</td>
+<td>SpringMVC</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>2</td>
+<td>はじめてのScala</td>
+<td>Scala</td>
+<td>入門</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">解決策：交差テーブルを作成<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>同じ意味を持つ値は、1つの列に格納して別テーブルとし、1:nやn:nのリレーションを作成すれば良い。</p>
+<table>
+<thead>
+<tr>
+<th>book_id</th>
+<th>book_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Spring MVC</td>
+</tr>
+<tr>
+<td>2</td>
+<td>はじめてのScala</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>book_tag_id</th>
+<th>book_tag_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Java</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Spring</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SpringMVC</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Scala</td>
+</tr>
+<tr>
+<td>5</td>
+<td>入門</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>book_id</th>
+<th>book_tag_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">参考<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://qiita.com/skyc_lin/items/37365a36416d0dc42431">SQLアンチパターン勉強会　第五回：EAV(エンティティ・アトリビュート・バリュー)</a></li>
+<li><a href="https://qiita.com/taiteam/items/33aebded2842808e0391">「SQLアンチパターン」まとめ</a></li>
+<li><a href="https://tech-blog.tsukaby.com/archives/857">ITエンジニアはSQLアンチパターンを読むべし！ 軽いまとめ</a></li>
+<li><a href="https://qiita.com/fktnkit/items/0ff462640e00deecfc6d">SQLアンチパターン　Entity Attribute Value</a></li>
 </ul>
 
 

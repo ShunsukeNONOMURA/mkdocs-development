@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://0.0.0.0/mkdocs/index.html">
+        <link rel="canonical" href="http://0.0.0.0/mkdocs/0220-requirement-robustness-analysis.html">
       
       
+        <link rel="prev" href="0211-requirement-usecase.html">
       
-        <link rel="next" href="0001-strategy-ux.html">
+      
+        <link rel="next" href="0300-design-api.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>MkDocs Development</title>
+        <title>（記述中）分析：ロバストネス分析 - MkDocs Development</title>
       
     
     
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              はじめに
+              （記述中）分析：ロバストネス分析
             
           </span>
         </div>
@@ -202,30 +204,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    はじめに
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -234,37 +216,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      リンク
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -353,10 +304,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="0220-requirement-robustness-analysis.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    （記述中）分析：ロバストネス分析
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="0220-requirement-robustness-analysis.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -365,6 +336,46 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ツール
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -760,7 +771,16 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      リンク
+      ツール
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
     </span>
   </a>
   
@@ -781,11 +801,43 @@
                   
 
 
-<h1 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>開発に関しての知見を記述するページ</p>
-<h2 id="_2">リンク<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">（記述中）分析：ロバストネス分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>システムのユースケースを記述した文章を基に、オブジェクトを用いた図(ロバストネス図)を作成する作業。<br />
+ユースケースを記述した文章からクラス図やシーケンス図といったUML静的モデルが作りやすくなる。<br />
+ユースケース記述を単純に図に変換するわけではないことに注意する。<br />
+ロバストネス図はスプリントプランニングの前に書かれているのが望ましい。<br />
+修正はロバストネス図から行う。<br />
+ロバストネス図の追加や編集を気軽にできる状態にしておく。  </p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アクター</td>
+<td>操作主体。「管理者」「ユーザ」「システム」「バッチ」など</td>
+</tr>
+<tr>
+<td>バウンダリ</td>
+<td>アクターが相互作用する画面やボタン</td>
+</tr>
+<tr>
+<td>エンティティ</td>
+<td>ソフトウェアシステム内部で半永久的に管理するデータ</td>
+</tr>
+<tr>
+<td>コントロール</td>
+<td>バウンダリとエンティティをつないでシステムが行う処理</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">ツール<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">参考<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://github.com/ShunsukeNONOMURA/mkdocs-development">Github Repository</a></li>
+<li><a href="https://engineering.visional.inc/blog/264/robustness-analysys/">アジャイル開発の設計にロバストネス分析を活用する</a></li>
 </ul>
 
 
