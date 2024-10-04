@@ -1,2 +1,2 @@
-# （記述中）Visual Studio Code
+# （記述中）ツール：Visual Studio Code
 

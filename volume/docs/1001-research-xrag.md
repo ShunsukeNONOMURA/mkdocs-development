@@ -1,4 +1,4 @@
-# xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
+# 研究：xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
 論文タイトル(和訳): xRAG:1つのトークンを持つ検索拡張ジェネレーションのための極端文脈圧縮
 
 **推論**
@@ -10,7 +10,7 @@
 - RAGのための文脈圧縮（Context Compression）手法
 - xRAGでは文書ベクトルをモダリティプロジェクタによって1トークンのベクトルに圧縮する
     - LLMへのトークン入力が「文書テキスト＋問い合わせテキスト」（b）から「文書ベクトル(１トークン)＋問い合わせテキスト」(a)になるためトークン消費量が大幅に削減される
-    - マルチモーダルAIにおけるバイナリベクトル投影に概念が似ている
+    - **マルチモーダルAIにおけるバイナリベクトル投影に概念が似ている**
     - チューニング済みLLMインストラクションに対してモダリティプロジェクタの学習を行うイメージ(LLM側はファインチューニングしない)
 - 設計/学習
     - 2層のMLPで設計されたモダリティプロジェクタをフルスクラッチで学習

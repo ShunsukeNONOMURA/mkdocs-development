@@ -20,7 +20,7 @@
     
     
       
-        <title>xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token - MkDocs Development</title>
+        <title>研究：xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token - MkDocs Development</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
+              研究：xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
             
           </span>
         </div>
@@ -345,6 +345,26 @@
   
   
     <li class="md-nav__item">
+      <a href="0300-design-name.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    設計：命名規則
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="0300-design-test.html" class="md-nav__link">
         
   
@@ -370,26 +390,6 @@
   
   <span class="md-ellipsis">
     （記述中）設計：UI設計
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="0310-design-pattern.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    デザインパターン
   </span>
   
 
@@ -485,6 +485,46 @@
   
   
     <li class="md-nav__item">
+      <a href="0400-example-ddd.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計例：DDD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="0410-example-design-pattern.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    設計例：デザインパターン
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="0500-project-management.html" class="md-nav__link">
         
   
@@ -549,7 +589,7 @@
         
   
   <span class="md-ellipsis">
-    （記述中）git
+    ツール：git
   </span>
   
 
@@ -565,11 +605,31 @@
   
   
     <li class="md-nav__item">
-      <a href="0901-tool-docker.html" class="md-nav__link">
+      <a href="0901-tool-git-secrets.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    （記述中）docker
+    ツール：git-secrets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="0910-tool-docker.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）ツール：docker
   </span>
   
 
@@ -589,7 +649,7 @@
         
   
   <span class="md-ellipsis">
-    （記述中）Visual Studio Code
+    （記述中）ツール：Visual Studio Code
   </span>
   
 
@@ -609,7 +669,7 @@
         
   
   <span class="md-ellipsis">
-    （記述中）postgresql
+    （記述中）ツール：postgresql
   </span>
   
 
@@ -629,7 +689,7 @@
         
   
   <span class="md-ellipsis">
-    （記述中）opensearch
+    （記述中）ツール：opensearch
   </span>
   
 
@@ -649,7 +709,7 @@
         
   
   <span class="md-ellipsis">
-    Hierarchical Navigable Small Worlds (HNSW)
+    研究：Hierarchical Navigable Small Worlds (HNSW)
   </span>
   
 
@@ -678,7 +738,7 @@
           
   
   <span class="md-ellipsis">
-    xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
+    研究：xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
   </span>
   
 
@@ -689,7 +749,7 @@
         
   
   <span class="md-ellipsis">
-    xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
+    研究：xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
   </span>
   
 
@@ -817,7 +877,7 @@
                   
 
 
-<h1 id="xrag-extreme-context-compression-for-retrieval-augmented-generation-with-one-token">xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token<a class="headerlink" href="#xrag-extreme-context-compression-for-retrieval-augmented-generation-with-one-token" title="Permanent link">&para;</a></h1>
+<h1 id="xrag-extreme-context-compression-for-retrieval-augmented-generation-with-one-token">研究：xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token<a class="headerlink" href="#xrag-extreme-context-compression-for-retrieval-augmented-generation-with-one-token" title="Permanent link">&para;</a></h1>
 <p>論文タイトル(和訳): xRAG:1つのトークンを持つ検索拡張ジェネレーションのための極端文脈圧縮</p>
 <p><strong>推論</strong>
 <img alt="" src="https://github.com/Hannibal046/xRAG/blob/main/assets/framework.jpg?raw=true" /></p>
@@ -827,7 +887,7 @@
 <li>RAGのための文脈圧縮（Context Compression）手法</li>
 <li>xRAGでは文書ベクトルをモダリティプロジェクタによって1トークンのベクトルに圧縮する<ul>
 <li>LLMへのトークン入力が「文書テキスト＋問い合わせテキスト」（b）から「文書ベクトル(１トークン)＋問い合わせテキスト」(a)になるためトークン消費量が大幅に削減される</li>
-<li>マルチモーダルAIにおけるバイナリベクトル投影に概念が似ている</li>
+<li><strong>マルチモーダルAIにおけるバイナリベクトル投影に概念が似ている</strong></li>
 <li>チューニング済みLLMインストラクションに対してモダリティプロジェクタの学習を行うイメージ(LLM側はファインチューニングしない)</li>
 </ul>
 </li>

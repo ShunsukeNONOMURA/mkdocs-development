@@ -1,2 +1,2 @@
-# （記述中）opensearch
+# （記述中）ツール：opensearch
 

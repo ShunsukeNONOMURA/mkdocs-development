@@ -1,4 +1,4 @@
-# （記述中）postgresql
+# （記述中）ツール：postgresql
 
 ## pgvector
 postgresqlでベクトル計算をするための拡張機能。

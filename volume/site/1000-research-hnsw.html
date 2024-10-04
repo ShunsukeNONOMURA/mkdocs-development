@@ -22,7 +22,7 @@
     
     
       
-        <title>Hierarchical Navigable Small Worlds (HNSW) - MkDocs Development</title>
+        <title>研究：Hierarchical Navigable Small Worlds (HNSW) - MkDocs Development</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hierarchical Navigable Small Worlds (HNSW)
+              研究：Hierarchical Navigable Small Worlds (HNSW)
             
           </span>
         </div>
@@ -347,6 +347,26 @@
   
   
     <li class="md-nav__item">
+      <a href="0300-design-name.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    設計：命名規則
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="0300-design-test.html" class="md-nav__link">
         
   
@@ -372,26 +392,6 @@
   
   <span class="md-ellipsis">
     （記述中）設計：UI設計
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="0310-design-pattern.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    デザインパターン
   </span>
   
 
@@ -487,6 +487,46 @@
   
   
     <li class="md-nav__item">
+      <a href="0400-example-ddd.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）設計例：DDD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="0410-example-design-pattern.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    設計例：デザインパターン
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="0500-project-management.html" class="md-nav__link">
         
   
@@ -551,7 +591,7 @@
         
   
   <span class="md-ellipsis">
-    （記述中）git
+    ツール：git
   </span>
   
 
@@ -567,11 +607,31 @@
   
   
     <li class="md-nav__item">
-      <a href="0901-tool-docker.html" class="md-nav__link">
+      <a href="0901-tool-git-secrets.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    （記述中）docker
+    ツール：git-secrets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="0910-tool-docker.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）ツール：docker
   </span>
   
 
@@ -591,7 +651,7 @@
         
   
   <span class="md-ellipsis">
-    （記述中）Visual Studio Code
+    （記述中）ツール：Visual Studio Code
   </span>
   
 
@@ -611,7 +671,7 @@
         
   
   <span class="md-ellipsis">
-    （記述中）postgresql
+    （記述中）ツール：postgresql
   </span>
   
 
@@ -631,7 +691,7 @@
         
   
   <span class="md-ellipsis">
-    （記述中）opensearch
+    （記述中）ツール：opensearch
   </span>
   
 
@@ -660,7 +720,7 @@
           
   
   <span class="md-ellipsis">
-    Hierarchical Navigable Small Worlds (HNSW)
+    研究：Hierarchical Navigable Small Worlds (HNSW)
   </span>
   
 
@@ -671,7 +731,7 @@
         
   
   <span class="md-ellipsis">
-    Hierarchical Navigable Small Worlds (HNSW)
+    研究：Hierarchical Navigable Small Worlds (HNSW)
   </span>
   
 
@@ -740,7 +800,7 @@
         
   
   <span class="md-ellipsis">
-    xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
+    研究：xRAG: Extreme Context Compression for Retrieval-augmented Generation with One Token
   </span>
   
 
@@ -819,7 +879,7 @@
                   
 
 
-<h1 id="hierarchical-navigable-small-worlds-hnsw">Hierarchical Navigable Small Worlds (HNSW)<a class="headerlink" href="#hierarchical-navigable-small-worlds-hnsw" title="Permanent link">&para;</a></h1>
+<h1 id="hierarchical-navigable-small-worlds-hnsw">研究：Hierarchical Navigable Small Worlds (HNSW)<a class="headerlink" href="#hierarchical-navigable-small-worlds-hnsw" title="Permanent link">&para;</a></h1>
 <p>論文タイトル(和訳): 階層型ナビゲータブル小世界グラフを用いた効率的かつ堅牢な近似最近傍探索</p>
 <h2 id="_1">概要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
@@ -840,7 +900,7 @@
 <ul>
 <li>探索<ul>
 <li>nswを用いてグラフ探索することで、目標のベクトルの近傍ノードを見つける。このnswを階層的に扱うのがhnsw。</li>
-<li>急行に乗って大きく移動してから各駅停車で小さく移動しなおすイメージ<ul>
+<li><strong>急行に乗って大きく移動してから各駅停車で小さく移動しなおすイメージ</strong><ul>
 <li>急行で飛ばした駅について考慮しなくていい</li>
 <li>各停に乗ったあとに急行には乗らない</li>
 </ul>

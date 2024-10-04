@@ -2,122 +2,137 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://0.0.0.0/mkdocs/index.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0001-strategy-ux.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0002-strategy-agile-iconix.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0210-requirement-domain-model.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0211-requirement-usecase.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0220-requirement-robustness-analysis.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0300-design-api.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://0.0.0.0/mkdocs/0300-design-name.html</loc>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0300-design-test.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0300-design-ui.html</loc>
-         <lastmod>2024-10-03</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>http://0.0.0.0/mkdocs/0310-design-pattern.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0350-design-ddd-cqrs.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0370-design-rdb.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0371-design-rdb-sql-anti-pattern.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0380-design-log.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://0.0.0.0/mkdocs/0400-example-ddd.html</loc>
+         <lastmod>2024-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://0.0.0.0/mkdocs/0410-example-design-pattern.html</loc>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0500-project-management.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0601-document-license.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0800-security-cvss.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0900-tool-git.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://0.0.0.0/mkdocs/0901-tool-docker.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <loc>http://0.0.0.0/mkdocs/0901-tool-git-secrets.html</loc>
+         <lastmod>2024-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://0.0.0.0/mkdocs/0910-tool-docker.html</loc>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0910-tool-vscode.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0920-tool-postgresql.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/0921-tool-opensearch.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/1000-research-hnsw.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://0.0.0.0/mkdocs/1001-research-xrag.html</loc>
-         <lastmod>2024-10-03</lastmod>
+         <lastmod>2024-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

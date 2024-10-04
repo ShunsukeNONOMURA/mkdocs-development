@@ -35,7 +35,22 @@ DDDの派生の中でオニオンアーキテクチャを利用するものと�
     - RepositoryのImplement
     - ORMの定義
 
-[Onion Architecture](https://medium.com/expedia-group-tech/onion-architecture-deed8a554423)に一通り実例が載っているので参考になる。
+[Onion Architecture](https://medium.com/expedia-group-tech/onion-architecture-deed8a554423)に一通り実例が載っているので参考になる。  
+
+### 参考：派生例：クリーンアーキテクチャ
+DDDの中で特に完全性に重きを置くアーキテクチャ。学習コストが高い。
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/f/fukubaya/20200205/20200205192656.png)
+[引用：Clean Architectureなにもわからないけど実例を晒して人類に貢献したい](https://www.m3tech.blog/entry/2020/02/07/110000)
+
+### 参考：派生がややこしい
+登場している名詞はDDD派生ごとにゆらぎがあることに注意すること。
+![](https://storage.googleapis.com/public-onemuri/entity.png)
+[引用：詳細 -クリーンアーキテクチャ-](https://onemuri.space/note/w0mrj0_hg/#google_vignette)
+
+### 参考：MVPとの対比例（クリーンアーキテクチャ）
+laravelでクリーンアーキテクチャする例。mvpとの対比言及あり。DDDによってModelレイヤの解像度が上がっている。
+![](https://user-images.githubusercontent.com/42175286/58724663-2ec11c80-8418-11e9-96e9-bfc6848e9374.png)
+[引用：ddd-backend-with-laravel](https://github.com/hiroki-it/ddd-backend-with-laravel) 
 
 ## CQRS（command query responsibility segregation）
 CQRSは**情報の参照に使用するモデルと更新に使用するモデルに異なるものを使用する**アーキテクチャを指す。
@@ -138,7 +153,7 @@ graph LR
     
 ```
 
-また、Queryにおいてはバックエンドindexへの入出力は素直に露出させると使いやすい。
+また、Queryにおいてはバックエンドindexへの入出力は素直に露出させて設計する場合がある。
 
 ## DDD と CQRS の併用
 以上を踏まえて、DDD＋CQRSの全体構造を示す。  
