@@ -121,12 +121,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://0.0.0.0/mkdocs/0921-tool-opensearch.html</loc>
+         <loc>http://0.0.0.0/mkdocs/0921-tool-oracle.html</loc>
          <lastmod>2024-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://0.0.0.0/mkdocs/0950-tool-cron.html</loc>
+         <loc>http://0.0.0.0/mkdocs/0930-tool-opensearch.html</loc>
+         <lastmod>2024-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://0.0.0.0/mkdocs/0950-tool-ssh.html</loc>
+         <lastmod>2024-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://0.0.0.0/mkdocs/0951-tool-cron.html</loc>
          <lastmod>2024-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://0.0.0.0/mkdocs/0921-tool-opensearch.html">
+        <link rel="canonical" href="http://0.0.0.0/mkdocs/0950-tool-ssh.html">
       
       
-        <link rel="prev" href="0920-tool-postgresql.html">
+        <link rel="prev" href="0930-tool-opensearch.html">
       
       
-        <link rel="next" href="0950-tool-cron.html">
+        <link rel="next" href="0951-tool-cron.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>（記述中）ツール：opensearch - MkDocs Development</title>
+        <title>ツール：SSH - MkDocs Development</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#opensearch" class="md-skip">
+        <a href="#ssh" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              （記述中）ツール：opensearch
+              ツール：SSH
             
           </span>
         </div>
@@ -684,6 +684,46 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="0921-tool-oracle.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）ツール：oracle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="0930-tool-opensearch.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）ツール：opensearch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -696,15 +736,65 @@
         
       
       
-      <a href="0921-tool-opensearch.html" class="md-nav__link md-nav__link--active">
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ツール：SSH
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="0950-tool-ssh.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    （記述中）ツール：opensearch
+    ツール：SSH
   </span>
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      install
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssh key
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -717,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="0950-tool-cron.html" class="md-nav__link">
+      <a href="0951-tool-cron.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,6 +902,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      install
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssh key
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -825,7 +941,33 @@
                   
 
 
-<h1 id="opensearch">（記述中）ツール：opensearch<a class="headerlink" href="#opensearch" title="Permanent link">&para;</a></h1>
+<h1 id="ssh">ツール：SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h1>
+<h2 id="install">install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo apt install -y openssh-server
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>sudo gedit /etc/ssh/sshd_config
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>service sshd restart
+</code></pre></div></td></tr></table></div>
+<p>sshd_config
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>#PasswordAuthentication yes
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>　　　　　　　↓
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>PasswordAuthentication no
+</code></pre></div></td></tr></table></div></p>
+<h2 id="ssh-key">ssh key<a class="headerlink" href="#ssh-key" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>ssh-keygen
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>mv ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>chmod 600 ~/.ssh/authorized_keys
+</code></pre></div></td></tr></table></div>
+id_rsaを接続元のクライアントにコピーしてssh接続する</p>
+<ul>
+<li><a href="https://aquarius-train.hatenablog.com/entry/SSH%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86%28Ubuntu18_04%29%E3%81%A8Windows%E3%81%8B%E3%82%89%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E7%A2%BA%E8%AA%8D%E6%89%8B%E9%A0%86">SSHの設定手順(Ubuntu20.04)とWindowsからのアクセス確認手順</a></li>
+<li><a href="https://atmarkit.itmedia.co.jp/flinux/rensai/linuxtips/430dnypsswdacces.html">sshでパスワード認証を禁止するには</a></li>
+</ul>
 
 
 

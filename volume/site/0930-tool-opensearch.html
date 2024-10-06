@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://0.0.0.0/mkdocs/0950-tool-cron.html">
+        <link rel="canonical" href="http://0.0.0.0/mkdocs/0930-tool-opensearch.html">
       
       
-        <link rel="prev" href="0921-tool-opensearch.html">
+        <link rel="prev" href="0921-tool-oracle.html">
       
       
-        <link rel="next" href="1000-research-hnsw.html">
+        <link rel="next" href="0950-tool-ssh.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>ツール：cron - MkDocs Development</title>
+        <title>（記述中）ツール：opensearch - MkDocs Development</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cron" class="md-skip">
+        <a href="#opensearch" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ツール：cron
+              （記述中）ツール：opensearch
             
           </span>
         </div>
@@ -687,11 +687,11 @@
   
   
     <li class="md-nav__item">
-      <a href="0921-tool-opensearch.html" class="md-nav__link">
+      <a href="0921-tool-oracle.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    （記述中）ツール：opensearch
+    （記述中）ツール：oracle
   </span>
   
 
@@ -716,18 +716,48 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
+      <a href="0930-tool-opensearch.html" class="md-nav__link md-nav__link--active">
+        
   
   <span class="md-ellipsis">
-    ツール：cron
+    （記述中）ツール：opensearch
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+      </a>
       
-      <a href="0950-tool-cron.html" class="md-nav__link md-nav__link--active">
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="0950-tool-ssh.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ツール：SSH
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="0951-tool-cron.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -736,127 +766,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      設定方法
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#crontab-e" class="md-nav__link">
-    <span class="md-ellipsis">
-      crontab -e
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="crontab -e">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      記述ルール
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#etccrond" class="md-nav__link">
-    <span class="md-ellipsis">
-      /etc/cron.d
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="/etc/cron.d">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      記述ルール
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      その他コマンド
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      二重起動対策
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="二重起動対策">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      起動プロセスを確認する方法
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      参考
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -943,113 +852,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      設定方法
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#crontab-e" class="md-nav__link">
-    <span class="md-ellipsis">
-      crontab -e
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="crontab -e">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      記述ルール
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#etccrond" class="md-nav__link">
-    <span class="md-ellipsis">
-      /etc/cron.d
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="/etc/cron.d">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      記述ルール
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      その他コマンド
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      二重起動対策
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="二重起動対策">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      起動プロセスを確認する方法
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      参考
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1063,124 +865,7 @@
                   
 
 
-<h1 id="cron">ツール：cron<a class="headerlink" href="#cron" title="Permanent link">&para;</a></h1>
-<h2 id="_1">設定方法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>通常、1か2のどちらかを選択すれば良いと思う。</p>
-<ol>
-<li>crontab -e</li>
-<li>/etc/cron.d</li>
-<li>/etc/crontab<ul>
-<li>この方法はややこしい上、2の方法で足りるのでここでは触らない</li>
-</ul>
-</li>
-</ol>
-<h2 id="crontab-e">crontab -e<a class="headerlink" href="#crontab-e" title="Permanent link">&para;</a></h2>
-<ul>
-<li>ユーザごとに管理する形で、sudo不要
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a># エディタが表示されるので直接編集して保存する
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a># 保存後は /var/spool/cron/crontabs/[USER] にファイルが作られる
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>crontab -e
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a># sudo権限がある場合は以下のよう直接編集可能
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>sudo gedit /var/spool/cron/crontabs/[USER]
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a># 設定確認 
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>crontab -l
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a># すべて削除（部分的に削除する場合はcrontab -eから編集が良い）
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>crontab -r
-</code></pre></div></td></tr></table></div></li>
-</ul>
-<h3 id="_2">記述ルール<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>分　時　日　月　曜日　コマンド　の順で記述
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>* * * * * cd ~/tmp &amp;&amp; ./tmp.sh # 毎分
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>0 * * * * cd ~/tmp &amp;&amp; ./tmp.sh # 毎時0分
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>0 12 * * * cd ~/tmp &amp;&amp; ./tmp.sh # 毎日12時0分
-</code></pre></div></td></tr></table></div></p>
-<h2 id="etccrond">/etc/cron.d<a class="headerlink" href="#etccrond" title="Permanent link">&para;</a></h2>
-<ul>
-<li>sudo権限必要</li>
-<li>システムによる定期実行を記す場合に適する</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a># スケジュール作成/更新
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>sudo gedit /etc/cron.d/[filename]
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a># 止める場合は削除すれば良い
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>sudo rm /etc/cron.d/[filename]
-</code></pre></div></td></tr></table></div>
-<h3 id="_3">記述ルール<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>分　時　日　月　曜日　実行ユーザ　コマンド　の順で記述<br />
-<code>crontab -e</code>とは違い、実行ユーザも必要
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>* * * * * [USER] cd ~/tmp &amp;&amp; ./tmp.sh # 毎分
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a># cron.d以下にすでに作られているファイルを参考にできる
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>cat /etc/cron.d/anacron
-</code></pre></div></td></tr></table></div></p>
-<h2 id="_4">その他コマンド<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a># 現在のcron状態や直近実行されたジョブを確認できる
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>systemctl status cron
-</code></pre></div></td></tr></table></div>
-<h2 id="_5">二重起動対策<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>cronで定期実行する際に二重起動する場合があるので対策が必要。</p>
-<h3 id="_6">起動プロセスを確認する方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>pidofコマンドと組み合わせる方法。シェルの場合は素直にプロセス名からpidを引けるので使いやすい。</p>
-<p>cronで書く場合はOR演算子でつなぐとプロセスがない場合に実行するような記述が取れる。
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a># 実行プログラムのpidofが取れない場合、プログラム実行する。
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>* * * * * pidof -x （実行プログラム） || （実行プログラム）
-</code></pre></div></td></tr></table></div></p>
-<p>シェルの中で実行時に重複確認する場合、現在実行しているプロセス以外にプロセスがある場合に終了する。
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span>
-<span class="normal"><a href="#__codelineno-6-11">11</a></span>
-<span class="normal"><a href="#__codelineno-6-12">12</a></span>
-<span class="normal"><a href="#__codelineno-6-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="ch">#!/bin/bash                                                                                                             </span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nv">PNUM</span><span class="o">=</span><span class="k">$(</span>pidof<span class="w"> </span>-x<span class="w"> </span><span class="nv">$0</span><span class="k">)</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$0</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$PNUM</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PNUM</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print NF}&#39;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2重起動です&quot;</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="k">fi</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="c1"># 実行</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="nb">echo</span><span class="w"> </span>start
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a>python<span class="w"> </span>run.py
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="nb">echo</span><span class="w"> </span>end
-</code></pre></div></td></tr></table></div></p>
-<h2 id="_7">参考<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://penpen-dev.com/blog/cron/">色々なcronの場所と違い【Ubuntu 18.04.4 LTS】</a></li>
-</ul>
+<h1 id="opensearch">（記述中）ツール：opensearch<a class="headerlink" href="#opensearch" title="Permanent link">&para;</a></h1>
 
 
 
