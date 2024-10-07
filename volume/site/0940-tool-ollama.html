@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://0.0.0.0/mkdocs/0900-tool-git.html">
+        <link rel="canonical" href="http://0.0.0.0/mkdocs/0940-tool-ollama.html">
       
       
-        <link rel="prev" href="0800-security-cvss.html">
+        <link rel="prev" href="0930-tool-opensearch.html">
       
       
-        <link rel="next" href="0901-tool-git-secrets.html">
+        <link rel="next" href="0950-tool-ssh.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>ツール：git - MkDocs Development</title>
+        <title>（記述中）ツール：ollama - MkDocs Development</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git" class="md-skip">
+        <a href="#ollama" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ツール：git
+              （記述中）ツール：ollama
             
           </span>
         </div>
@@ -584,30 +584,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    ツール：git
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="0900-tool-git.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="0900-tool-git.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -616,190 +596,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      設定
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      クローン
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      ブランチ
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      ローカル更新
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#push" class="md-nav__link">
-    <span class="md-ellipsis">
-      コマンドでpushするまでの一連の流れ
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="コマンドでpushするまでの一連の流れ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      キャッシュ削除
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      戻す時
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      取り消し
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="取り消し">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#add" class="md-nav__link">
-    <span class="md-ellipsis">
-      ローカルブランチでの編集作業の取り消し（addする前）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-add" class="md-nav__link">
-    <span class="md-ellipsis">
-      git add の取り消し
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remote-repository-reset" class="md-nav__link">
-    <span class="md-ellipsis">
-      remote repository で reset を行う
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      ブランチ切り替え
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#github" class="md-nav__link">
-    <span class="md-ellipsis">
-      github
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="github">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      アクセストークン
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#public-private" class="md-nav__link">
-    <span class="md-ellipsis">
-      public &lt;-&gt; private
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      delete repository
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -928,10 +724,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="0940-tool-ollama.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    （記述中）ツール：ollama
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="0940-tool-ollama.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -940,6 +756,73 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      インストール
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      公開モデル取得
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      プライベートモデル登録
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      一覧
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      公開
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1075,7 +958,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      設定
+      インストール
     </span>
   </a>
   
@@ -1084,7 +967,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      クローン
+      公開モデル取得
     </span>
   </a>
   
@@ -1093,7 +976,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      ブランチ
+      プライベートモデル登録
     </span>
   </a>
   
@@ -1102,135 +985,18 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      ローカル更新
+      一覧
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#push" class="md-nav__link">
-    <span class="md-ellipsis">
-      コマンドでpushするまでの一連の流れ
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="コマンドでpushするまでの一連の流れ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      キャッシュ削除
+      公開
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      戻す時
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      取り消し
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="取り消し">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#add" class="md-nav__link">
-    <span class="md-ellipsis">
-      ローカルブランチでの編集作業の取り消し（addする前）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-add" class="md-nav__link">
-    <span class="md-ellipsis">
-      git add の取り消し
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remote-repository-reset" class="md-nav__link">
-    <span class="md-ellipsis">
-      remote repository で reset を行う
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      ブランチ切り替え
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#github" class="md-nav__link">
-    <span class="md-ellipsis">
-      github
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="github">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      アクセストークン
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#public-private" class="md-nav__link">
-    <span class="md-ellipsis">
-      public &lt;-&gt; private
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      delete repository
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1249,155 +1015,57 @@
                   
 
 
-<h1 id="git">ツール：git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
-<h2 id="_1">設定<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>pushを行う際などに必要。ない場合<code>Author identity unknown</code>が出る。
-ここで指定しなくても、push時のオプションで指定可能。
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>git config --global user.email &quot;you@example.com&quot;
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>git config --global user.name &quot;Your Name&quot;
+<h1 id="ollama">（記述中）ツール：ollama<a class="headerlink" href="#ollama" title="Permanent link">&para;</a></h1>
+<p>ローカルでLLMを動かすツール。<br />
+REST実行可能で、langchainやdifyなどの他のライブラリやツールと連携できる。  </p>
+<h2 id="_1">インストール<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://ollama.com/download/linux">https://ollama.com/download/linux</a></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://ollama.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</code></pre></div></td></tr></table></div>
+<h2 id="_2">公開モデル取得<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>取得（<a href="https://ollama.com/karuniaperjuangan/multilingual-e5-small">multilingual-e5-small</a>）
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>ollama<span class="w"> </span>pull<span class="w"> </span>karuniaperjuangan/multilingual-e5-small
 </code></pre></div></td></tr></table></div></p>
-<ul>
-<li><a href="https://yutaka-gakushu.com/tips/git/author-identity-unknown-error">Git Commitを実行したら、「Author identity unknown」エラー</a></li>
-<li><a href="https://qiita.com/megane42/items/5375b54ea3570506e296">名前やメールアドレスを一時的に指定して git commit する方法</a></li>
-</ul>
-<h2 id="_2">クローン<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>git clone https:~~
-</code></pre></div></td></tr></table></div>
-<h2 id="_3">ブランチ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a># ブランチ作成と切り替え
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>git checkout -b &lt;branch&gt;
-</code></pre></div></td></tr></table></div>
-<h2 id="_4">ローカル更新<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span>
-<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a># 現在のブランチを更新
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>git pull
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a># 特定のブランチの更新を取り入れる
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>git rebase &lt;branch&gt;
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a># コンフリクトの確認
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>git status
-</code></pre></div></td></tr></table></div>
-<h2 id="push">コマンドでpushするまでの一連の流れ<a class="headerlink" href="#push" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<p>動作確認
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:11434/api/embeddings<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="s1">  &quot;model&quot;: &quot;karuniaperjuangan/multilingual-e5-small:latest&quot;,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="s1">  &quot;prompt&quot;:&quot;ラーメンとうどんはどっちが美味しい？&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="s1">}&#39;</span>
+</code></pre></div></td></tr></table></div></p>
+<p>レスポンス
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JSON</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">{</span><span class="nt">&quot;embedding&quot;</span><span class="p">:[</span><span class="mf">0.2444828599691391</span><span class="p">,</span><span class="mf">0.0738295242190361</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">,</span><span class="mf">0.3108423352241516</span><span class="p">]}</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="_3">プライベートモデル登録<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>guff形式のモデルをModelファイルを介して登録する。</p>
+<h2 id="_4">一覧<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git add .
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>git status
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>git commit -m &quot;message&quot;
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>git -c user.name=&#39;foobar&#39; -c user.email=&#39;foobar@example.com&#39; commit -m &#39;...&#39;
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>git push
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># モデルを一覧</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>ollama<span class="w"> </span>list
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1"># モデルを更新</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>ollama<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span>+2<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f1<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-n1<span class="w"> </span>ollama<span class="w"> </span>pull
 </code></pre></div></td></tr></table></div>
-<h3 id="_5">キャッシュ削除<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>.gitignoreの変更が反映されず、ファイルが残る場合、キャッシュが原因なので削除するとよい。
-削除後にコミットしてプッシュすると完了。
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span>
-<span class="normal"><a href="#__codelineno-5-4">4</a></span>
-<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>//ファイル全体のキャッシュ削除
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>$ git rm -r --cached .
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>//ファイルを指定してキャッシュ削除
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>$ git rm -r --cached [ファイル名]
+<h2 id="_5">公開<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>デフォルトだと他ホストからのアクセスを許可していないので設定が必要。<br />
+<a href="https://github.com/ollama/ollama/blob/main/docs/faq.md#setting-environment-variables-on-linux">https://github.com/ollama/ollama/blob/main/docs/faq.md#setting-environment-variables-on-linux</a></p>
+<p>nanoエディタを立ち上げる
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>sudo systemctl edit ollama.service
 </code></pre></div></td></tr></table></div></p>
-<h2 id="_6">戻す時<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><code>### Lines below this comment will be discarded</code>より上に記述。<br />
+<code>Ctrl-O Enter</code>で保存。<code>Ctrl-X</code>で終了。
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a># 新しく追加した分
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>git checkout .
-</code></pre></div></td></tr></table></div>
-<h2 id="_7">取り消し<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p><a href="https://softwarenote.info/p3540/">Git 操作の取り消し・元に戻す手順</a></p>
-<h3 id="add">ローカルブランチでの編集作業の取り消し（addする前）<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>[Service]
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>Environment=&quot;OLLAMA_HOST=0.0.0.0&quot;
+</code></pre></div></td></tr></table></div></p>
+<p>サービスを再起動
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span>
-<span class="normal"><a href="#__codelineno-7-3">3</a></span>
-<span class="normal"><a href="#__codelineno-7-4">4</a></span>
-<span class="normal"><a href="#__codelineno-7-5">5</a></span>
-<span class="normal"><a href="#__codelineno-7-6">6</a></span>
-<span class="normal"><a href="#__codelineno-7-7">7</a></span>
-<span class="normal"><a href="#__codelineno-7-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a># すべて元に戻す
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>git checkout .
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a># 指定のファイルだけ元に戻す
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>git checkout {filename}
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a># 再帰的にディレクトリを辿って削除を行う
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a>git clean -df
-</code></pre></div></td></tr></table></div>
-<h3 id="git-add">git add の取り消し<a class="headerlink" href="#git-add" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>git reset
-</code></pre></div></td></tr></table></div>
-<h3 id="remote-repository-reset">remote repository で reset を行う<a class="headerlink" href="#remote-repository-reset" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-9-10">10</a></span>
-<span class="normal"><a href="#__codelineno-9-11">11</a></span>
-<span class="normal"><a href="#__codelineno-9-12">12</a></span>
-<span class="normal"><a href="#__codelineno-9-13">13</a></span>
-<span class="normal"><a href="#__codelineno-9-14">14</a></span>
-<span class="normal"><a href="#__codelineno-9-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a># 戻したいcommit idを見つける
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>git log
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a># local repository の reset を実施
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a>git reset {commit id}
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a># 余計なファイルや更新があれば削除しておく
-<a id="__codelineno-9-8" name="__codelineno-9-8"></a>git clean -df
-<a id="__codelineno-9-9" name="__codelineno-9-9"></a>git checkout .
-<a id="__codelineno-9-10" name="__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11"></a># 差分がないことを確認
-<a id="__codelineno-9-12" name="__codelineno-9-12"></a>git status
-<a id="__codelineno-9-13" name="__codelineno-9-13"></a>
-<a id="__codelineno-9-14" name="__codelineno-9-14"></a># remoteに適用
-<a id="__codelineno-9-15" name="__codelineno-9-15"></a>git push origin main -f
-</code></pre></div></td></tr></table></div>
-<h2 id="_8">ブランチ切り替え<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-10-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a># 今のブランチ
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>git branch
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a># ブランチを変更（-bのときは作成する）
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a>git checkout sample-branch
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a>git checkout -b sample-branch
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a># ブランチ削除
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a>git checkout -d sample-branch
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a># マージ
-<a id="__codelineno-10-9" name="__codelineno-10-9"></a>git checkout master
-<a id="__codelineno-10-10" name="__codelineno-10-10"></a>git merge sample-branch
-</code></pre></div></td></tr></table></div>
-<h2 id="github">github<a class="headerlink" href="#github" title="Permanent link">&para;</a></h2>
-<h3 id="_9">アクセストークン<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>repositoryの更新など一部の操作ではgithubに対して認証が必要になる。
-以前はパスワード認証も可能であったが、非推奨となった模様。
-<a href="https://github.com/settings/tokens">Personal access tokens</a>から生成可能 (profile settings -&gt; Developer Settingsから辿れる)。
-repositoryを触るだけならとりあえずrepoだけチェックで良い。</p>
-<p><a href="https://codelikes.com/github-https-connection/">GitHubにHTTPS接続でアクセスする方法！5ステップでトークンを作成！</a></p>
-<h3 id="public-private">public &lt;-&gt; private<a class="headerlink" href="#public-private" title="Permanent link">&para;</a></h3>
-<p>repository setting (Danger Zone) -&gt; Change repository visibility</p>
-<p><img alt="" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F224453%2F671958a1-45fc-dc5b-8e7c-3e2050ccb2e9.png?ixlib=rb-4.0.0&amp;auto=format&amp;gif-q=60&amp;q=75&amp;w=1400&amp;fit=max&amp;s=1586b2d1f770f85dffafa37435bc2db9" /></p>
-<p><a href="https://qiita.com/HyunwookPark/items/1d24972dd71612eb81c9">github private public 変更</a></p>
-<h3 id="delete-repository">delete repository<a class="headerlink" href="#delete-repository" title="Permanent link">&para;</a></h3>
-<p>repository setting (Danger Zone) -&gt; Delete this repository</p>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>sudo systemctl daemon-reload
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>sudo systemctl restart ollama
+</code></pre></div></td></tr></table></div></p>
 
 
 

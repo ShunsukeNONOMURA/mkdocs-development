@@ -727,6 +727,26 @@
   
   
     <li class="md-nav__item">
+      <a href="0940-tool-ollama.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （記述中）ツール：ollama
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="0950-tool-ssh.html" class="md-nav__link">
         
   
@@ -1182,7 +1202,7 @@
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>systemctl status cron
 </code></pre></div></td></tr></table></div>
 <h2 id="_5">二重起動対策<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>cronで定期実行する際に二重起動する場合があるので対策が必要。</p>
+<p>cronで定期実行する際に処理に時間がかかると二重起動する場合があるので対策が必要。</p>
 <h3 id="_6">起動プロセスを確認する方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>pidofコマンドと組み合わせる方法。シェルの場合は素直にプロセス名からpidを引けるので使いやすい。</p>
 <p>cronで書く場合はOR演算子でつなぐとプロセスがない場合に実行するような記述が取れる。
@@ -1190,8 +1210,8 @@
 <span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a># 実行プログラムのpidofが取れない場合、プログラム実行する。
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a>* * * * * pidof -x （実行プログラム） || （実行プログラム）
 </code></pre></div></td></tr></table></div></p>
-<p>シェルの中で実行時に重複確認する場合、現在実行しているプロセス以外にプロセスがある場合に終了する。　　
-shebangを1行目に記載することに注意する。
+<p>シェルの中で実行時に重複確認する場合、現在実行しているプロセス以外にプロセスがある場合に終了する。<br />
+shebangを1行目でbash指定することに注意する。
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1204,19 +1224,23 @@ shebangを1行目に記載することに注意する。
 <span class="normal"><a href="#__codelineno-6-10">10</a></span>
 <span class="normal"><a href="#__codelineno-6-11">11</a></span>
 <span class="normal"><a href="#__codelineno-6-12">12</a></span>
-<span class="normal"><a href="#__codelineno-6-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="ch">#!/bin/bash                                                                                                             </span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nv">PNUM</span><span class="o">=</span><span class="k">$(</span>pidof<span class="w"> </span>-x<span class="w"> </span><span class="nv">$0</span><span class="k">)</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$0</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$PNUM</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PNUM</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print NF}&#39;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2重起動です&quot;</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="k">fi</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="c1"># 実行</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="nb">echo</span><span class="w"> </span>start
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a>python<span class="w"> </span>run.py
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="nb">echo</span><span class="w"> </span>end
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1"># 重複確認</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="nv">PNUM</span><span class="o">=</span><span class="k">$(</span>pidof<span class="w"> </span>-x<span class="w"> </span><span class="nv">$0</span><span class="k">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$0</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$PNUM</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PNUM</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print NF}&#39;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2重起動です&quot;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="k">fi</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="c1"># 実行</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="nb">echo</span><span class="w"> </span>start
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>python<span class="w"> </span>run.py
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="nb">echo</span><span class="w"> </span>end
 </code></pre></div></td></tr></table></div></p>
 <h2 id="_7">参考<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
