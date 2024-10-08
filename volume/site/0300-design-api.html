@@ -1317,7 +1317,8 @@ WebAPI設計に絶対解はないが、ベタープラクティスや周辺知�
 <li>賛否両論。複数派が情勢が強いかな。</li>
 <li>単数派<ul>
 <li>ORMやEntity名との命名整合や不規則変化系への対応がシンプルになる<ul>
-<li>media, medium</li>
+<li>media, medium, </li>
+<li>data, datum</li>
 </ul>
 </li>
 </ul>
@@ -1460,12 +1461,9 @@ WebAPI設計に絶対解はないが、ベタープラクティスや周辺知�
 </ul>
 <h2 id="_2">レスポンス構造<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>headとdataに分ける。  </li>
+<li>headとbodyに分ける。  </li>
 <li>headはデバッグ的情報で内容固定</li>
-<li>dataは副作用的情報でAPI毎に構造を変える<ul>
-<li>実はdataはdatumの複数形。data objectに有象無象を抱えているイメージで捉える。</li>
-</ul>
-</li>
+<li>bodyは副作用的情報でAPI毎に構造を変える</li>
 </ul>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">JSON</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
@@ -1479,7 +1477,7 @@ WebAPI設計に絶対解はないが、ベタープラクティスや周辺知�
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nt">&quot;actionCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ARRREEE&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="nt">&quot;actionName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ActionResouce&quot;</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
@@ -1644,37 +1642,46 @@ WebAPI設計に絶対解はないが、ベタープラクティスや周辺知�
 </li>
 </ul>
 <!-- ---------------------------------------- -->
-<h1 id="_5">途中　＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
-<h2 id="_6">ドメインモデル設計サンプル<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>chatRoom</p>
-<p>Chat id　チャットルーム
-ChatName 主題</p>
-<p>Join ChatMessage チャットメッセージ
-Join ChatUsers　参加者</p>
-<p>ChatRoomParticipant 参加者
+<!-- # 途中　＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃
+
+## ドメインモデル設計サンプル
+
+chatRoom
+
+Chat id　チャットルーム
+ChatName 主題
+
+Join ChatMessage チャットメッセージ
+Join ChatUsers　参加者
+
+ChatRoomParticipant 参加者
 ChatId チャット
-ChatUserId チャット参加ユーザId</p>
-<p>chat message id
+ChatUserId チャット参加ユーザId
+
+chat message id
 ChatMessage
 ChatMessageUserId
-ChatMessageCreatedAt</p>
-<p><strong>まだ</strong></p>
-<h2 id="process">Process<a class="headerlink" href="#process" title="Permanent link">&para;</a></h2>
-<p>ProcessCode = ARRR
-ProcessName = ResouceNameActionName</p>
-<h2 id="recouse">Recouse<a class="headerlink" href="#recouse" title="Permanent link">&para;</a></h2>
-<p>3桁のコードで示すこと</p>
-<h2 id="_7">設計のステップ<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<ol>
-<li>データの洗い出し</li>
-<li>データをリソースに分割</li>
-<li>リソースにURIを割り当てる</li>
-<li>リソースにIFを割り当てる</li>
-<li>クライアントに送受信するメディアタイプを決める</li>
-<li>接続性を高める</li>
-<li>正常系を考える</li>
-<li>例外処理を考える</li>
-</ol>
+ChatMessageCreatedAt
+
+**まだ**
+
+## Process
+ProcessCode = ARRR
+ProcessName = ResouceNameActionName
+
+## Recouse
+3桁のコードで示すこと
+
+## 設計のステップ
+1. データの洗い出し
+1. データをリソースに分割
+1. リソースにURIを割り当てる
+1. リソースにIFを割り当てる
+1. クライアントに送受信するメディアタイプを決める
+1. 接続性を高める
+1. 正常系を考える
+1. 例外処理を考える -->
+
 <!-- <-------------------------------------------->
 
 
